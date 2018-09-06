@@ -1,9 +1,12 @@
+const path = require('path');
+
 module.exports = {
     entry: {
-        index: './src/index.js'
+      index: './src/index.js'
     },
     output: {
-        filename: '[name].js'
+      path: path.resolve(__dirname, 'dist'),
+      filename: '[name].js'
     },
     module: {
       rules: [
@@ -11,8 +14,17 @@ module.exports = {
           test: /\.js$/,
           exclude: /node_modules/,
           use: {
-            loader: "babel-loader"
+            loader: 'babel-loader'
           }
+        },
+        {
+          test: /\.scss$/,
+          exclude: /node_modules/,
+          use: [
+            'style-loader',
+            'css-loader',
+            'sass-loader'
+          ]
         }
       ]
     }
