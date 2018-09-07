@@ -1,0 +1,86 @@
+.sidebar {
+    height: 100%;
+
+    .list-actions {
+        height: 45px;
+        border: 0 solid $color-border;
+        border-width: 1px 1px 0 1px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+        .action {
+            padding-left: 15px;
+        }
+    }
+
+    .email-list {
+        height: calc(100% - 45px);
+        overflow-y: scroll;
+        border: 0 solid $color-border;
+        border-width: 0 0 1px 1px;
+
+        .email-item {
+            height: 79px;
+            width: 319px;
+            line-height: 1.4;
+            border: 0 solid $color-border;
+            border-width: 1px 1px 0 0;
+            cursor: pointer;
+
+            .sender {
+                font-family: Helvetica;
+                font-size: 12px;
+                font-weight: bold;
+                color: $color-sender;
+                padding: 15px 20px 0 20px;
+
+                .text {
+                    padding-left: 5px;
+                }
+            }
+
+            .subject {
+                font-family: Helvetica;
+                font-size: 12px;
+                color: $color-subject;
+                padding: 0 20px 0 20px;
+                font-weight: unset;
+            }
+
+            .excerpt {
+                font-family: Helvetica;
+                font-size: 12px;
+                color: $color-short-description;
+                padding: 0 20px 0 20px;
+            }
+
+            &.unread {
+                /* do something */
+            }
+
+            &.active {
+                background-color: $color-background-selected;
+                border-left: 5px solid $color-bar-selected;
+                width: 314px;
+
+                .sender {
+                    padding-left: 16px;
+                }
+
+                .subject {
+                    padding-left: 16px;
+                }
+
+                .excerpt {
+                    padding-left: 16px;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+

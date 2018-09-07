@@ -4,7 +4,8 @@
   "description": "A challenge to create a email client",
   "main": "index.js",
   "scripts": {
-    "start": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js --mode development --open",
+    "start": "npm run build & npm run serve",
+    "serve": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js --mode development --open",
     "build": "./node_modules/webpack/bin/webpack.js --mode production",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

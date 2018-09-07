@@ -1,0 +1,11 @@
+@import "./styles/reset.scss";
+@import "./styles/colors.scss";
+@import "./styles/variables.scss";
+@import "./styles/icons.scss";
+@import "./components/Sidebar.scss";
+
+#app {
+    display: flex;
+    font-family: Helvetica;
+    font-size: 12px;
+}
