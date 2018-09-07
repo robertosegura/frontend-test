@@ -3,8 +3,9 @@
 @import "./styles/variables.scss";
 @import "./styles/icons.scss";
 @import "./components/Sidebar.scss";
+@import "./components/MainArea.scss";
 
-#app {
+.container {
     display: flex;
     font-family: Helvetica;
     font-size: 12px;
