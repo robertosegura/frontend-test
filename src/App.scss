@@ -5,8 +5,13 @@
 @import "./components/Sidebar.scss";
 @import "./components/MainArea.scss";
 
+#app {
+    height: 100%;
+}
+
 .container {
     display: flex;
     font-family: Helvetica;
     font-size: 12px;
+    height: 100%;
 }

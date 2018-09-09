@@ -4,6 +4,17 @@
     height: 100%;
     overflow-y: scroll;
 
+    &.empty {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .icon {
+            font-size: 400px;
+            color: $color-actions;
+        }
+    }
+
     .section-info {
         display: flex;
         padding: 20px 40px;
@@ -31,7 +42,7 @@
             border: 1px solid $color-border;
             padding: 40px 50px;
             border-radius: 10px;
-            background: $color-white;
+            background-color: $color-white;
 
             .section-sender {
                 display: flex;

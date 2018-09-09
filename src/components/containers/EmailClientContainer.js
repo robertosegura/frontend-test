@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { loadEmails } from '../../actions/emailActions';
+import { loadEmails, activeEmail } from '../../actions/emailActions';
 import Sidebar from '../Sidebar';
 import MainArea from '../MainArea';
 
@@ -16,14 +16,15 @@ class EmailClientContainer extends Component {
     }
 
     selectEmail(selectedEmail) {
-        this.setState({currentEmail: selectedEmail});
+        this.props.dispatch(activeEmail(selectedEmail));
+        console.log(this.props);
     }
 
     render() {
         return (
             <div className='container'>
                 <Sidebar emails={this.props.emails} onClick={this.selectEmail} />
-                <MainArea activeEmail={this.props.activeEmail} />
+                <MainArea email={this.props.activeEmail} />
             </div>
         );
     }
