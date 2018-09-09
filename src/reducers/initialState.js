@@ -1,4 +1,4 @@
 export default {
-    currentEmail: {},
-    emails: []
+    currentItem: {},
+    items: []
 }

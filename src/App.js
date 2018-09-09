@@ -1,15 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Sidebar from './components/Sidebar';
-import MainArea from './components/MainArea';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import rootReducer from './reducers';
+import EmailClientContainer from './components/containers/EmailClientContainer';
 import './App.scss';
+
+const store = createStore(rootReducer);
 
 const App = () => {
     return (
-        <div className='container'>
-            <Sidebar />
-            <MainArea />
-        </div>
+        <Provider store={store}>
+            <EmailClientContainer />
+        </Provider>
     );
 };
 
