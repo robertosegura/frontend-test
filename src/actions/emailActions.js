@@ -1,3 +1,4 @@
+import { INBOX } from '../utils/constants';
 import {
     LOAD_EMAILS,
     ACTIVE_EMAIL,
@@ -11,7 +12,7 @@ import data from '../data/mail-data.json'
 export const loadEmails = () => {
     // Initially all are in INBOX
     const processed = data.map((item, index) => {
-        return Object.assign({ id: ++index, type: 'INBOX'}, item)
+        return Object.assign({ id: ++index, type: INBOX}, item)
     });
 
     return {

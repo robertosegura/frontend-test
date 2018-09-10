@@ -17,16 +17,23 @@ const renderItem = (email, onClick) => {
             <div key className='sender'>
                 <i className="icon">person_outline</i>
                 <label className='text'>{email.tag}</label>
+                <label className="date">{formatDate(email.date)}</label>
             </div>
-            <div className='subject'>
-                {!email.isReaded ? <i className='icon'>fiber_manual_record</i> : false}
+            <div className="subject">
+                {!email.isReaded ? <i className="icon">fiber_manual_record</i> : false}
                 <label>{email.subject}</label>
             </div>
-            <div className='excerpt'>
+            <div className="excerpt">
                 <label>{email.body}</label>
             </div>
         </li>
     )
+};
+
+const formatDate = (date) => {
+    const options = { month: 'short', day: 'numeric' };
+    const dateFormat = new Date(date);
+    return dateFormat.toLocaleDateString('en-US', options)
 }
 
 export default EmailList;

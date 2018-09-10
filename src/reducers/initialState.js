@@ -1,5 +1,7 @@
+import { INBOX } from '../utils/constants'
+
 export default {
-    list: 'INBOX',
+    list: INBOX,
     currentItem: {},
     items: []
 }

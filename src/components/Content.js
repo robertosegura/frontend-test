@@ -7,7 +7,7 @@ const Content = ({email}) => {
             <div className="content">
                 <div className="section-sender">
                     <div className="sender">
-                        {email.tag} <a href="">{email.from}</a>
+                        {email.tag} <span className="from">{"<"}{email.from}{">"}</span>
                     </div>
                     <div className="date">
                         {formatDate(email.date)}
@@ -22,9 +22,10 @@ const Content = ({email}) => {
 };
 
 const formatDate = (date) => {
-    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    const dateOpt = {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'};
+    const timeOpt = {hour: '2-digit', minute:'2-digit'};
     const dateFormat = new Date(date);
-    return dateFormat.toLocaleDateString('en-US', options) + ' ' + dateFormat.toLocaleTimeString();
+    return dateFormat.toLocaleDateString('en-US', dateOpt) + ' ' + dateFormat.toLocaleTimeString([], timeOpt);
 };
 
 export default Content;

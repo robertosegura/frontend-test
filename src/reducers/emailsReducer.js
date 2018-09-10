@@ -1,3 +1,4 @@
+import { SPAM, TRASH} from '../utils/constants';
 import {
     LOAD_EMAILS,
     ACTIVE_EMAIL,
@@ -48,7 +49,7 @@ export default function emailsReducer(state = initialState, action) {
         case MARK_AS_SPAM: {
             const newState = Object.assign({}, state);
             newState.items.filter(item => item.active).map(item => {
-                item.type = 'SPAM';
+                item.type = SPAM;
                 item.active = false;
             });
 
@@ -60,7 +61,7 @@ export default function emailsReducer(state = initialState, action) {
         case SEND_TO_TRASH: {
             const newState = Object.assign({}, state);
             newState.items.filter(item => item.active).map(item => {
-                item.type = 'TRASH';
+                item.type = TRASH;
                 item.active = false;
             });
 
