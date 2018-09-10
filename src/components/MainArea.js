@@ -18,8 +18,8 @@ const MainArea = ({email, markAsUnread, markAsSpam, sendToTrash}) => {
                 </div>
                 <div className="actions">
                     <i className="icon" onClick={() => markAsUnread()}>fiber_manual_record</i>
-                    <i className="icon" onClick={() => sendToTrash()}>delete_outline</i>
-                    <i className="icon" onClick={() => markAsSpam()}>bug_report</i>
+                    {email.type != 'TRASH' ? <i className="icon" onClick={() => sendToTrash()}>delete_outline</i> : false}
+                    {email.type != 'SPAM' ? <i className="icon" onClick={() => markAsSpam()}>bug_report</i> : false}
                 </div>
             </div>
             <div className="section-content">
@@ -29,7 +29,7 @@ const MainArea = ({email, markAsUnread, markAsSpam, sendToTrash}) => {
                             {email.tag} <a href="">{email.from}</a>
                         </div>
                         <div className="date">
-                            {email.date}
+                            {formatDate(email.date)}
                         </div>
                     </div>
                     <div className="body">
@@ -39,6 +39,12 @@ const MainArea = ({email, markAsUnread, markAsSpam, sendToTrash}) => {
             </div>
         </div>
     );
+};
+
+const formatDate = (date) => {
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    const dateFormat = new Date(date);
+    return dateFormat.toLocaleDateString('en-US', options) + ' ' + dateFormat.toLocaleTimeString();
 };
 
 export default MainArea;

@@ -10,8 +10,8 @@
         align-items: center;
 
         .icon {
-            font-size: 400px;
-            color: $color-actions;
+            font-size: 300px;
+            color: $color-icon-background-empty;
         }
     }
 
@@ -31,6 +31,7 @@
             font-size: 19px;
             cursor: default;
             color: $color-actions;
+            padding-right: 12px;
         }
     }
 

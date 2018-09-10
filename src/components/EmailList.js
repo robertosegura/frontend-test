@@ -22,7 +22,8 @@ class EmailList extends Component {
                     <label className='text'>{email.tag}</label>
                 </div>
                 <div className='subject'>
-                    {email.subject}
+                    {!email.isReaded ? <i className='icon'>fiber_manual_record</i> : false}
+                    <label>{email.subject}</label>
                 </div>
                 <div className='excerpt'>
                     {email.body}

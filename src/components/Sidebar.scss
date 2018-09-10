@@ -32,15 +32,14 @@
     .email-list {
         height: calc(100% - 45px);
         overflow-y: scroll;
-        border: 0 solid $color-border;
-        border-width: 0 0 1px 1px;
+        border: 1px solid $color-border;
 
         .email-item {
             height: 79px;
-            width: 318px;
+            width: 320px;
             line-height: 1.4;
             border: 0 solid $color-border;
-            border-width: 1px 1px 0 0;
+            border-width: 0 0 1px 0;
             cursor: pointer;
 
             .sender {
@@ -73,8 +72,14 @@
                 text-overflow: ellipsis;
             }
 
-            &.unread {
-                /* do something */
+            &.unreaded {
+                .subject {
+                    padding-left: 4px;
+                    .icon {
+                        color: $color-bar-selected;
+                        padding-right: 4px;
+                    }
+                }
             }
 
             &.active {
@@ -82,16 +87,8 @@
                 border-left: 5px solid $color-bar-selected;
                 width: 313px;
 
-                .sender {
-                    padding-left: 16px;
-                }
-
-                .subject {
-                    padding-left: 16px;
-                }
-
-                .excerpt {
-                    padding-left: 16px;
+                .sender, .subject, .excerpt {
+                    padding-left: 15px;
                 }
             }
         }
