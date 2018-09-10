@@ -71,8 +71,12 @@ export default function emailsReducer(state = initialState, action) {
         }
 
         case SHOW_LIST: {
+            const newState = Object.assign({}, state);
+            newState.items.map(item => item.active = false);
             const { list } = action.payload;
-            return Object.assign({}, state, {
+
+            return Object.assign({}, newState, {
+                currentItem: {},
                 list
             });
         }
