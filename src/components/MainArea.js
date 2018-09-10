@@ -1,6 +1,6 @@
 import React from 'react';
 
-const MainArea = ({email}) => {
+const MainArea = ({email, markAsUnread, markAsSpam, sendToTrash}) => {
 
     if (Object.keys(email).length == 0) {
         return (
@@ -17,9 +17,9 @@ const MainArea = ({email}) => {
                     {email.subject}
                 </div>
                 <div className="actions">
-                    <i className="icon">fiber_manual_record</i>
-                    <i className="icon">delete_outline</i>
-                    <i className="icon">bug_report</i>
+                    <i className="icon" onClick={() => markAsUnread()}>fiber_manual_record</i>
+                    <i className="icon" onClick={() => sendToTrash()}>delete_outline</i>
+                    <i className="icon" onClick={() => markAsSpam()}>bug_report</i>
                 </div>
             </div>
             <div className="section-content">

@@ -27,8 +27,10 @@
             color: $color-subject;
         }
 
-        .actions {
-            // some styles
+        .icon {
+            font-size: 19px;
+            cursor: default;
+            color: $color-actions;
         }
     }
 

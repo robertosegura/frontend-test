@@ -1,5 +1,6 @@
 .sidebar {
     height: 100%;
+    width: 320px;
 
     .list-actions {
         height: 45px;
@@ -17,6 +18,13 @@
                 height: 20px;
                 vertical-align: middle;
                 font-size: 16px;
+                color: $color-actions;
+            }
+
+            &.active {
+                .icon, .text {
+                    color: $color-bar-selected;
+                }
             }
         }
     }
@@ -29,7 +37,7 @@
 
         .email-item {
             height: 79px;
-            width: 319px;
+            width: 318px;
             line-height: 1.4;
             border: 0 solid $color-border;
             border-width: 1px 1px 0 0;
@@ -72,7 +80,7 @@
             &.active {
                 background-color: $color-background-selected;
                 border-left: 5px solid $color-bar-selected;
-                width: 314px;
+                width: 313px;
 
                 .sender {
                     padding-left: 16px;
