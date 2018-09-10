@@ -3,7 +3,11 @@
 @import "./styles/variables.scss";
 @import "./styles/icons.scss";
 @import "./components/Sidebar.scss";
+@import "./components/ActionList.scss";
+@import "./components/EmailList.scss";
 @import "./components/MainArea.scss";
+@import "./components/ActionContent.scss";
+@import "./components/Content.scss";
 
 #app {
     height: 100%;

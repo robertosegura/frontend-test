@@ -1,0 +1,71 @@
+.email-list {
+    height: calc(100% - 45px);
+    overflow-y: scroll;
+    border: 1px solid $color-border;
+
+    .email-item {
+        height: 79px;
+        width: 320px;
+        line-height: 1.4;
+        border: 0 solid $color-border;
+        border-width: 0 0 1px 0;
+        cursor: pointer;
+
+        .sender {
+            font-family: Helvetica;
+            font-size: 12px;
+            font-weight: bold;
+            color: $color-sender;
+            padding: 15px 20px 0 20px;
+
+            .text {
+                padding-left: 5px;
+            }
+
+            .date {
+                float: right;
+                font-size: 10px;
+                font-weight: normal;
+                color: $color-date-list;
+            }
+        }
+
+        .subject {
+            font-family: Helvetica;
+            font-size: 12px;
+            color: $color-subject;
+            padding: 0 20px 0 20px;
+            font-weight: unset;
+        }
+
+        .excerpt {
+            font-family: Helvetica;
+            font-size: 12px;
+            color: $color-short-description;
+            padding: 0 20px 0 20px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        &.unreaded {
+            .subject {
+                padding-left: 4px;
+                .icon {
+                    color: $color-bar-selected;
+                    padding-right: 4px;
+                }
+            }
+        }
+
+        &.active {
+            background-color: $color-background-selected;
+            border-left: 5px solid $color-bar-selected;
+            width: 313px;
+
+            .sender, .subject, .excerpt {
+                padding-left: 15px;
+            }
+        }
+    }
+}

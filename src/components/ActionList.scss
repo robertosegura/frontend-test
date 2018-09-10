@@ -1,0 +1,26 @@
+.list-actions {
+    height: 45px;
+    border: 0 solid $color-border;
+    border-width: 1px 1px 0 1px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    .action {
+        padding-right: 10px;
+
+        .icon {
+            width: 20px;
+            height: 20px;
+            vertical-align: middle;
+            font-size: 16px;
+            color: $color-actions;
+        }
+
+        &.active {
+            .icon, .text {
+                color: $color-bar-selected;
+            }
+        }
+    }
+}
